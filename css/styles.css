@@ -152,11 +152,11 @@ h2 {
 
 .lateral.esquerda {
   left: -120px;
-  background-image: url('/assets/lateralEsquerda.png');
+  background-image: url('../assets/lateralEsquerda.png');
 }
 .lateral.direita {
   right: -120px;
-  background-image: url('/assets/lateralEsquerda.png');
+  background-image: url('../assets/lateralEsquerda.png');
 }
 
 .carrosel {
