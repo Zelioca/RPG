@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Scientia Vaporis</title>
+  <link href="https://fonts.cdnfonts.com/css/malibu-2" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/lucida-unicode-calligraphy" rel="stylesheet" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <div class="lateral esquerda "></div>
+  <div class="lateral direita"></div>
+  <div id="meuModal" class="modal" onclick="fecharModal()">
+    <span class="fechar">&times;</span>
+    <img class="modal-conteudo" id="imgExpandida">
+    <div id="legenda"></div>
+  </div>
+  <div id="modal-galeria" class="lightbox-galeria" onclick="fecharModalGaleria(event)">
+    <span class="fechar-galeria" onclick="fecharModalGaleria(event)">&times;</span>
+
+    <button class="seta-galeria anterior-galeria" onclick="mudarFotoGaleria(-1, event)">&#10094;</button>
+
+    <div class="centro-galeria">
+      <img class="img-expandida-galeria" id="img-modal-galeria">
+      <div id="legenda-galeria"></div>
+      <div id="contador-galeria"></div>
+    </div>
+
+    <button class="seta-galeria proximo-galeria" onclick="mudarFotoGaleria(1, event)">&#10095;</button>
+  </div>
+  <header>
+    <nav id="menu" class="oculto">
+      <p>
+        <a href="#inicio">Inicio</a> • <a href="#historia">História</a> •
+        <a href="#mundo">Mundo</a> • <a href="#personagem">Personagens</a> •
+        <a href="#equipe">Equipe</a> •
+        <a href="#galeria">Galeria</a>
+      </p>
+    </nav>
+    <button id="menu-button">☰</button>
+  </header>
+  <main>
+    <section id="inicio">
+      <img src="assets/logo.png" alt="Logo customizada do RPG escrita STEAM WORLD" width="600px" />
+      <h1>Um grande impacto entre dois mundos</h1>
+    </section>
+    <section id="historia">
+      <h2>Historia</h2>
+      <p class="texto">
+        <img src="assets/ecustom.png" alt="Letra H customizada" class="hcustom" />
+        m 2040, Foi Observado um Exo-Planeta Adentrando no Sistema Solar, o planeta mostrava sinais de formas de vida,
+        mas com tamanho extremo. Após diversos estudos, a colisão deste planeta com a Terra era inevitavel e ruim, mas
+        constante. Durante os 52 anos de fusão dos planetas, a lua perdeu sua orbita, satelites naturais foram criados e
+        novos elementos foram criados.
+
+      </p>
+      <br />
+      <p class="texto">
+        <img src="assets/colisao.jpg" alt="Representação visual da colisão entre os planetas." id="colisao"
+          class="miniatura" onclick="abrirModal(this)" />
+        <img src="assets/ncustom.png" alt="Letra H customizada" class="hcustom" />
+        uvens de cinza foram criadas e a terra se tornou um lugar morto por causa da falta de oxigenio e da alta
+        temperatura que essa colisão causou. Com a falta da lua, tsunamis aconteceram, causando praticamente a extinção
+        da raça humana, aqueles poucos que sobreviveram, foram expostos a alto niveis de radição, causando anomalias em
+        seu tudo que poderia ser considerado normal.
+      </p>
+      <br />
+      <p class="texto">
+        <img src="assets/acustom.png" alt="Letra H customizada" class="hcustom" />
+        s novas civizações que haviam chegado eram muito diversificadas, tendo especies, como seres mitologicos, que eram
+        extremamente agressivos. Assim, há humanidade não se viu com muitas opçoes e teve de regredir tecnologicamente,
+        se inspirando em como o outro planeta sobrevivia e voltando a era da tecnologia a vapor.
+      </p>
+    </section>
+    <section id="mundo">
+      <h2 id="h2mundo">Mundo</h2>
+      <img src="assets/mapaMundi.png" alt="mapa completo do mundo" width="1000px" />
+    </section>
+    <section id="personagem">
+      <h2>Personagens</h2>
+      <div class="carrosel">
+        <button class="botao esquerda">🠬</button>
+        <div class="personagem visto">
+          <h2>Amante das Chamas</h2>
+          <p class="texto">Antigamente, ele caminhava entre os mortais como um ser humano comum, sem marcas ou grandes
+            destinos. Contudo, a Grande Colisão rasgou os céus e trouxe os primeiros dragões ao <img
+              src="assets/amanteChamas.png" alt="Representação visual da amante da chamas." class="miniatura bruxa"
+              onclick="abrirModal(this)">mundo, cujas linhagens acabaram se misturando e criando laços profundos com a
+            humanidade. Seus descendentes diretos herdaram mais do que apenas sangue antigo; eles se tornaram um com o
+            próprio fogo primordial, capazes de dobrar as labaredas à sua vontade e moldar o calor como extensão de suas
+            próprias almas condenadas.
+          </p>
+        </div>
+        <div class="personagem">
+          <h2>Ciborgue</h2>
+          <p class="texto">
+            Este ser carrega o peso de uma existência dividida entre a carne frágil e a engrenagem fria, moldado
+            perfeitamente sob uma estética steampunk implacável. Em eras passadas,
+            <img src="assets/ciborgue.jpg" alt="Representação visual do ciborgue." class="miniatura"
+              onclick="abrirModal(this)">
+            andróides caminhavam pela terra e se envolveram intimamente com os seres humanos. Dessa união proibida e
+            tecnológica nasceram os ciborgues, criaturas que sobrevivem à base de carvão, vapor e circuitos hidráulicos,
+            lutando para manter vivos os últimos vestígios de sua humanidade enquanto o metal avança sobre seus corações
+            enferrujados.
+          </p>
+        </div>
+        <div class="personagem">
+          <h2>Guerreiro do Vento</h2>
+          <p class="texto">
+            Ele é um espírito inteiramente livre, uma entidade puramente feita das correntes de ar que cortam o mundo.
+            Sua existência mística já ecoava pelas lendas muito antes da colisão dos <img src="assets/bruxa.png"
+              alt="Representação visual do guerreiro do vento." class="miniatura" onclick="abrirModal(this)">
+            mundos, sendo temido e respeitado por eras. O guerreiro é amplamente conhecido por seus movimentos
+            assustadoramente leves e serenos, cortando o campo de batalha com uma postura calma e imperturbável, onde
+            cada golpe desferido parece o sopro silencioso, porém mortal, de uma tempestade iminente.
+          </p>
+        </div>
+        <div class="personagem">
+          <h2>Alquimista Gelada</h2>
+          <p class="texto">
+            Nascida nos berços de ouro de uma antiga aristocracia, esta abandonou os salões nobres para dominar os
+            segredos e as propriedades proibidas do gelo absoluto. Sua postura fria,
+            <img src="assets/bruxa.png" alt="Representação visual da alquimista gelada." class="miniatura"
+              onclick="abrirModal(this)">
+            calculista e cortante condiz perfeitamente com a alcunha que carrega entre os vivos. Ela não possui espaço
+            para sentimentos ou laços humanos em seu peito congelado; sua mente obstinada se importa única e
+            exclusivamente com a grande alquimia, dedicando cada segundo de sua eternidade às descobertas sombrias de
+            suas pesquisas.
+          </p>
+        </div>
+        <div class="personagem">
+          <h2>Cavaleiro Obscuro</h2>
+          <p class="texto">
+            Um guerreiro lendário que passou longos anos de sua vida trancado em treinamento, aperfeiçoando sua esgrima
+            impecável e desenvolvendo técnicas de combate mortais.
+            <img src="assets/bruxa.png" alt="Representação visual do cavaleiro obscuro." class="miniatura"
+              onclick="abrirModal(this)">
+            Sua jornada, porém, foi interrompida de forma vil quando acabou morto no campo de batalha por uma traição
+            covarde vinda de quem ele mais confiava. Arrancado do descanso eterno por um ódio implacável, ele agora
+            caminha pelas sombras como uma casca vazia que busca apenas vingança e o sangue quente do ser que o traiu.
+          </p>
+        </div>
+        <div class="personagem">
+          <h2>Assasina Biologica</h2>
+          <p class="texto">
+            Abandonada à própria sorte desde pequena nos confins de uma floresta densa e esquecida, esta jovem teve que
+            aprender a sobreviver sem qualquer auxílio. O isolamento a moldou para
+            <img src="assets/bruxa.png" alt="Representação visual da assasina biologica." class="miniatura"
+              onclick="abrirModal(this)">
+            viver como um autêntico animal caçador, aguçando seus sentidos ao extremo para rastrear qualquer rastro na
+            mata. Ela não conhece a misericórdia ou as leis dos homens; quando entra em combate, ataca seus inimigos de
+            forma totalmente sorrateira e selvagem, dilacerando seus alvos antes que percebam sua presença nas sombras.
+          </p>
+        </div>
+        <div class="personagem">
+          <h2>Maga Negra</h2>
+          <p class="texto">
+            Uma feiticeira profundamente solitária que passou a maior parte de sua existência escondida do mundo,
+            decifrando tomos antigos e aperfeiçoando magias sombrias. Após dominar
+            <img src="assets/magaNegra.jpg" alt="Representação visual da maga negra." class="miniatura"
+              onclick="abrirModal(this)">
+            as forças mais obscuras do ocultismo, ela se viu cercada por um vazio existencial esmagador. Hoje, ela vaga
+            pelas terras devastadas tentando decifrar os mistérios de seu próprio destino, buscando incansavelmente um
+            propósito real ou uma justificativa que dê sentido à sua existência assombrada pelos feitiços do passado.
+          </p>
+        </div>
+        <div class="personagem">
+          <h2>Serva do Trovão</h2>
+          <p class="texto">
+            Diferente daqueles que temem as tempestades elétricas que assolam os céus cinzentos de New Iron, esta
+            guerreira converteu a fúria dos céus em sua própria essência de combate. Escolhida
+            <img src="assets/servoTrovao.png" alt="Representação visual da serva do trovão." class="miniatura"
+              onclick="abrirModal(this)">
+            por forças que transcendem a compressão mecânica, ela atua como um para-raios humano, canalizando a
+            eletricidade estática diretamente para o fio de suas lâminas modificadas. Onde ela pisa, o ar se torna denso
+            e o cheiro de ozônio queimado anuncia que qualquer oposição será instantaneamente reduzida a cinzas sob o
+            estalo violento de suas correntes elétricas.
+          </p>
+        </div>
+        <div class="personagem">
+          <h2>Sniper Platinado</h2>
+          <p class="texto">
+            Ela já foi uma das mentes militares mais brilhantes da guerra, mas acabou exilada de sua própria tropa e
+            caçada como uma criminosa de alta periculosidade. Carregando
+            <img src="assets/bruxa.png" alt="Representação visual do sniper platinado." class="miniatura"
+              onclick="abrirModal(this)">
+            apenas seu rifle de precisão e as cicatrizes de batalhas que o mundo prefere esquecer, ela se tornou uma
+            fugitiva solitária. Depois de sobreviver à grande reviravolta que destruiu sua antiga vida, ela agora evita
+            os grandes centros urbanos e tenta apenas procurar um pouco de paz e descanso longe dos tiros.
+          </p>
+        </div>
+        <div class="personagem">
+          <h2>Caçador do Purgatorio</h2>
+          <p class="texto">
+            Esta criatura não pertence ao mundo dos vivos e nem ao dos mortos; trata-se de uma entidade antiga cujo
+            único propósito de existência é o extermínio. Ele rasteja pelos limiares da
+            <img src="assets/bruxa.png" alt="Representação visual do caçador do purgatorio." class="miniatura"
+              onclick="abrirModal(this)">
+            realidade para caçar e matar os seres humanos sem qualquer vestígio de piedade. Movido por um ódio ancestral
+            e um rancor profundo acumulado através das eras, ele muitas vezes executa suas vítimas puramente por
+            precaução, garantindo que nenhuma linhagem mortal prospere diante de seus olhos vermelhos.
+          </p>
+        </div>
+        <div class="personagem">
+          <h2>BioQuimico</h2>
+          <p class="texto">
+            Um jovem prodígio que dedicou sua juventude a estudar absolutamente tudo o que a ciência e os livros antigos
+            podiam oferecer. Agora, ele utiliza todo esse vasto conhecimento acadêmico
+            <img src="assets/bruxa.png" alt="Representação visual do bio-quimico." class="miniatura"
+              onclick="abrirModal(this)">
+            a seu favor no campo de batalha, agindo como um arquiteto da destruição e da cura. Com a mesma facilidade
+            que manipula fórmulas para criar medicamentos milagrosos capazes de fechar feridas, ele desenvolve
+            substâncias altamente corrosivas que derretem metal e carne em poucos segundos.
+          </p>
+        </div>
+        <div class="personagem">
+          <h2>Amazona</h2>
+          <p class="texto">
+            Criada desde o seu primeiro suspiro em uma ilha mística habitada e governada exclusivamente por mulheres,
+            esta jovem cresceu sob uma doutrina rígida. Desde a sua
+            <img src="assets/bruxa.png" alt="Representação visual do cavaleiro obscuro." class="miniatura"
+              onclick="abrirModal(this)">
+            infância, ela foi destinada pelas anciãs a se tornar a guerreira mais poderosa que o mundo já viu. Seu
+            cotidiano é baseado em treinamentos extenuantes e rituais de combate, moldando seu corpo e sua mente com o
+            único e sagrado objetivo de proteger seu lar contra qualquer invasor que ouse cruzar suas praias.
+          </p>
+        </div>
+        <div class="personagem">
+          <h2>Alma de Luz</h2>
+          <p class="texto">
+            Apesar de carregar um aspecto angelical resplandecente que se assemelha às divindades, este ser compartilha
+            da mesma crueldade do Caçador do Purgatório. Trata-se de uma
+            <img src="assets/bruxa.png" alt="Representação visual da alma de luz." class="miniatura"
+              onclick="abrirModal(this)">
+            entidade altamente poderosa que desce dos céus com intenções sombrias. Ela caça os seres humanos sem
+            descanso para escravizá-los e submetê-los a torturas inimagináveis, extraindo cada gota de seus
+            conhecimentos e memórias mundanas para utilizá-los em benefício próprio e na expansão do paraíso celestial.
+          </p>
+        </div>
+        <div class="personagem">
+          <h2>Composto R</h2>
+          <p class="texto">
+            Esta mulher passou anos trancada em laboratórios subterrâneos, servindo como cobaia humana para experimentos
+            científicos cruéis e desumanos. O sofrimento prolongado
+            <img src="assets/bruxa.png" alt="Representação visual do composto R." class="miniatura"
+              onclick="abrirModal(this)">
+            alterou sua estrutura celular, dando-lhe o poder aterrorizante de controlar tudo o que envolve radiação.
+            Capaz de derreter paisagens inteiras com ondas de energia atômica, ela caminha pelo mundo com um desejo
+            destrutivo, jurando eliminar de forma implacável qualquer um que fique em seu caminho ou tente contê-la.
+          </p>
+        </div>
+        <div class="personagem">
+          <h2>Decomposta</h2>
+          <p class="texto">
+            Ela encontrou seu fim trágico quando foi sequestrada por um grupo de fanáticos religiosos, que usaram seu
+            corpo indefeso como sacrifício em um ritual profano. No entanto, a
+            <img src="assets/bruxa.png" alt="Representação visual da decomposta." class="miniatura"
+              onclick="abrirModal(this)">
+            morte não foi o capítulo final de sua história. Ela despertou como um cadáver ambulante, uma alma presa em
+            carne apodrecida que vaga pelas noites escuras. Movida por uma fome eterna de vingança, ela busca beber o
+            sangue quente daqueles que violaram sua vida e profanaram seu descanso.
+          </p>
+        </div>
+        <div class="personagem">
+          <h2>Imperatriz Relampago</h2>
+          <p class="texto">
+            Uma governanta absolutista e implacável que recebeu diretamente dos céus a graça e o controle sobre os raios
+            e trovões. Seu trono é sustentado pelo medo e pelo respeito à sua força
+            <img src="assets/bruxa.png" aalt="Representação visual da imperatriz relampago." class="miniatura"
+              onclick="abrirModal(this)">
+            devastadora, que ecoa como trovões pelas planícies. Ela não aceita contestações ou fraquezas em sua corte;
+            com o estalar de seus dedos revestidos de energia elétrica, ela é capaz de esmagar instantaneamente qualquer
+            inimigo ou exército rebelde que ouse ameaçar a soberania de seu império.
+          </p>
+        </div>
+        <div class="personagem">
+          <h2>Borbulhador</h2>
+          <p class="texto">
+            Ele caminha pelo mundo como um antigo e respeitado mestre das artes místicas do elemento água. Seu controle
+            sobre as marés é tão profundo que ele se tornou capaz de criar
+            <img src="assets/bruxa.png" alt="Representação visual do borbulhador." class="miniatura"
+              onclick="abrirModal(this)">
+            fortes correntezas, invocar chuvas torrenciais ou manifestar tempestades devastadoras exatamente quando e
+            onde bem entender. Para ele, os oceanos e rios são extensões de seus próprios braços, fazendo com que vilas
+            inteiras se curvem diante do medo de serem engolidas por suas inundações repentinas.
+          </p>
+        </div>
+        <div class="personagem">
+          <h2>Mestre das Almas</h2>
+          <p class="texto">
+            Um ser completamente misterioso e desconhecido que vaga pelas névoas com o poder de controlar a essência dos
+            mortos. Ele arranca os espíritos de seus túmulos para que
+            <img src="assets/bruxa.png" alt="Representação visual do mestre das almas." class="miniatura"
+              onclick="abrirModal(this)">
+            lutem suas batalhas ou sirvam como escravos de sua vontade. Antigos boatos que correm pelas tavernas dizem
+            que as almas convocadas por ele pertencem a Deuses antigos e bravos guerreiros do passado. No entanto, para
+            a maioria das pessoas, essas histórias macabras não passam de meras lendas para assustar crianças.
+          </p>
+        </div>
+        <div class="personagem">
+          <h2>Filha de Lilith</h2>
+          <p class="texto">
+            A única e herdeira legítima de Lilith carrega em suas veias uma herança de trevas e destruição absoluta. Seu
+            poder místico é tão descomunal
+            <img src="assets/bruxa.png" alt="Representação visual da filha de lilith." class="miniatura"
+              onclick="abrirModal(this)">
+            que cada passo seu é capaz de fazer estremecera terra e rachar montanhas inteiras. Alheia às guerras dos
+            mortais e às disputas por reinos, ela possui apenas uma ambição fixa que guia todos os seus atos: acumular
+            energia o bastante para quebrar as barreiras do submundo e trazer sua mãe de volta à vida.
+          </p>
+        </div>
+        <div class="personagem">
+          <h2>Engenheiro</h2>
+          <p class="texto">
+            Considerado por muitos a mente mais brilhante e perigosa a caminhar pelas oficinas mecânicas do submundo,
+            ele é o arquiteto por trás dos motores a vapor que mantêm a cidade
+            <img src="assets/bruxa.png" alt="Representação visual do engenheiro." class="miniatura"
+              onclick="abrirModal(this)">
+            pulsando. Com as mãos permanentemente manchadas de graxa pesada e óleo lubrificante, ele enxerga o mundo não
+            como um lugar biológico, mas como um grande maquinário que precisa ser regulado. Equipado com suas
+            ferramentas customizadas e projetos proibidos, ele é capaz de criar ou sabotar qualquer sistema mecânico com
+            precisão cirúrgica em segundos.
+          </p>
+        </div>
+        <button class="botao direita">🠮</button>
+      </div>
+      <div class="indicadores"></div>
+    </section>
+    <section id="equipe">
+      <h2>Nossa Equipe</h2>
+      <div class="carrosel">
+        <button class="botao esquerda">🠬</button>
+        <div class="membro visto">
+          <h2>Samuel Ferraz</h2>
+          <p class="texto">Ele é a verdadeira mente criativa por trás de todo o projeto. Foi dele que nasceu a ideia
+            inicial do nosso RPG, transformando uma simples inspiração em um universo rico e cheio de possibilidades.
+            Com muita dedicação e visão, ele reuniu cada membro da equipe, alinhou talentos e estruturou todo o projeto
+            nos mínimos detalhes, deixando-o extremamente completo e coeso. Além de idealizador e organizador, ele
+            também assume o papel fundamental de Game Master do nosso jogo. Ele quem conduz a narrativa, dá vida ao
+            mundo e aos personagens, e detém a palavra final sobre as regras.
+          </p>
+        </div>
+        <div class="membro">
+          <h2>Hiran Silva</h2>
+          <p class="texto">
+            Como criador do site, ele assumiu a responsabilidade integral por toda a programação e funcionalidades que
+            vocês estão vendo. Seu trabalho foi essencial para transformar ideias em uma plataforma
+            funcional, garantindo que a experiência de navegação seja clara e envolvente. Dessa forma, cada detalhe foi
+            pensado estrategicamente para facilitar o acesso às informações, permitindo que todos aqueles que se
+            interessam pelo tema possam explorar a plataforma com
+            facilidade, aprofundar seus conhecimentos sobre o projeto, entender nossos objetivos e
+            resumo completo de tudo.
+          </p>
+        </div>
+        <div class="membro">
+          <h2>Augusto Paiva</h2>
+          <p class="texto">
+            O designer do site desempenhou um papel fundamental no desenvolvimento de toda a nossa identidade visual. Foi por meio do seu olhar estratégico que cada detalhe da interface ganhou vida, desde a
+            definição de onde os botões deveriam ser posicionados até a forma mais harmônica
+            de organizar as imagens e distribuir os textos na tela. Além disso, ele cuidou pessoalmente da escolha da
+            paleta de cores aplicada em cada seção, assegurando que o contraste e a estética trabalhassem juntos para
+            proporcionar uma experiência de uso agradável.
+          </p>
+        </div>
+        <div class="membro">
+          <h2>Valentin Liscano</h2>
+          <p class="texto">
+            Idealizador das classes e de grande parte da narrativa, ele esteve por trás do desenvolvimento deste mundo e
+            de toda a sua complexa história. Sua visão estratégica deu forma às origens, aos conflitos e à evolução
+            desse universo, garantindo que cada detalhe tivesse profundidade e coerência. Além de estruturar toda a base
+            teórica e os rumos da trama, ele também participou significativamente do trabalho prático, contribuindo de
+            maneira ativa e minuciosa na construção das maquetes que representam as cidades, transformando conceitos
+            abstratos em cenários físicos ricos em detalhes.
+          </p>
+        </div>
+        <div class="membro">
+          <h2>Joaquim Gabriel</h2>
+          <p class="texto">
+            Os personagens que conhecemos e admiramos hoje só possuem histórias profundas e habilidades marcantes porque
+            houve alguém nos bastidores que se dedicou intensamente a criar cada detalhe desse universo. Esse criador. Ao detalhar os limites, as fraquezas e a lógica por trás de cada
+            habilidade, o autor deu vida, verossimilhança e peso dramático à narrativa, permitindo que o público se
+            conectasse verdadeiramente com a jornada e os desafios enfrentados por cada figura da história.
+          </p>
+        </div>
+        <div class="membro">
+          <h2>Emilly Cristiny</h2>
+          <p class="texto">
+            Responsável pela representação física principal de nosso mundo, ela assumiu a importante tarefa de
+            selecionar, adquirir todos os materiais necessários e dar vida à maquete central que retrata a cidade
+            situada no coração de toda a nossa história. Com muita dedicação e atenção aos detalhes, transformou ideias
+            abstratas em uma estrutura concreta, permitindo que todos pudessem visualizar e compreender melhor esse
+            espaço tão fundamental. Além desse trabalho grandioso na construção da peça principal, ela também contribuiu
+            ativamente na criação de pequenas imagens e elementos visuais complementares.
+          </p>
+        </div>
+        <div class="membro">
+          <h2>Enzo Alves</h2>
+          <p class="texto">
+            Ele é o nosso desenhista principal e o grande responsável por dar vida visual a todo este projeto. Os
+            personagens da nossa história só podem ser imaginados, compreendidos e vistos hoje porque ele os tirou do
+            papel e os transformou em realidade. A partir de cada detalhe, descrição e informação compartilhada pela
+            equipe, seu processo criativo foi
+            minucioso e completo, começando pelos primeiros rascunhos e pela estruturação do modelo físico de cada um,
+            até alcançar a finalização impecável em arte digital, garantindo que cada traço e expressão transmitam
+            exatamente a essência que desejávamos.
+          </p>
+        </div>
+        <div class="membro">
+          <h2>Serva do Trovão</h2>
+          <p class="texto">
+            Diferente daqueles que temem as tempestades elétricas que assolam os céus cinzentos de New Iron, esta
+            guerreira converteu a fúria dos céus em sua própria essência de combate. Escolhida
+            <img src="assets/bruxa.png" alt="bruxa vagabunda">
+            por forças que transcendem a compressão mecânica, ela atua como um para-raios humano, canalizando a
+            eletricidade estática diretamente para o fio de suas lâminas modificadas. Onde ela pisa, o ar se torna denso
+            e o cheiro de ozônio queimado anuncia que qualquer oposição será instantaneamente reduzida a cinzas sob o
+            estalo violento de suas correntes elétricas.
+          </p>
+        </div>
+
+        <button class="botao direita">🠮</button>
+      </div>
+      <div class="indicadores"></div>
+    </section>
+    <section id="galeria">
+      <h2>Galeria</h2>
+      <div class="grade-galeria">
+        <img src="assets/img1.jpg" alt="Primeiros rabiscos dos personagens">
+        <img src="assets/img2.jpg" alt="Primeiros rabiscos dos personagens">
+        <img src="assets/img3.jpg" alt="Primeiros rabiscos dos personagens">
+        <img src="assets/img4.jpg" alt="Primeiros rabiscos dos personagens">
+        <img src="assets/img5.jpg" alt="Primeiros rabiscos do mundo e ideias">
+        <img src="assets/img6.jpg" alt="Primeiros rabiscos do mundo e ideias">
+        <img src="assets/img7.jpg" alt="Primeiros rabiscos do mundo e ideias">
+        <img src="assets/img8.jpg" alt="lista das classes principais">
+        <img src="assets/img9.jpg" alt="criação de um notebook no notebookLM">
+        <img src="assets/img10.jpg" alt="Desenhos do mapa mundi em contrução">
+        <img src="assets/img11.jpg" alt="Desenhos do mapa mundi em contrução">
+        <img src="assets/img12.jpg" alt="Desenhos do mapa mundi em contrução">
+        <img src="assets/img13.jpg" alt="Desenhos do mapa mundi em contrução">
+        <img src="assets/img14.jpg" alt="Criaçao de um personagem digital">
+        <img src="assets/img15.jpg" alt="Criação da maquete da cidade principal">
+        <img src="assets/img16.jpg" alt="Criação da maquete da cidade principal">
+        <img src="assets/img17.jpg" alt="Criação da maquete da cidade principal">
+        <img src="assets/img18.jpg" alt="Visão de um 'humano' na cidade">
+        <img src="assets/img19.jpg" alt="Criação da maquete da cidade principal">
+        <img src="assets/img20.jpg" alt="Criação da maquete da cidade principal">
+        <img src="assets/img21.jpg" alt="Ideia da maquete no minecraft">
+        <img src="assets/img22.jpg" alt="Organização da sala para apresentação">
+      </div>
+    </section>
+  </main>
+  <script src="js/script.js" defer></script>
+</body>
+
+</html>
